@@ -28,14 +28,20 @@
 
 ## 安装
 
-已经装进 `web` profile（本地目录 link 安装）：
+从 GitHub 直接装（推荐）：
+
+```powershell
+dsh plugin --profile web add https://github.com/chenjiang2025/ComfyUI-comfyui-assistant
+```
+
+本地开发用 link 安装（本机当前就是这种）：
 
 ```powershell
 dsh plugin --profile web add "C:\Users\辰\Documents\deepseek-harness\默认工作区\comfyui-assistant"
 ```
 
-`dsh` 会把包链接进 profile 并激活 bundle（`cordis.patch.yml` 里的 `comfyui-assistant` 行）。
-因为它是指向本目录的 link，**移动或删除本目录会让插件失效**；要搬家就重新 `add` 一次。
+`dsh` 会把包装进 profile 并激活 bundle（`cordis.patch.yml` 里的 `comfyui-assistant` 行）。
+用 link 方式时，**移动或删除源码目录会让插件失效**；要搬家就重新 `add` 一次。
 
 卸载：
 
