@@ -1,7 +1,7 @@
 {
   "name": "comfyui-assistant",
-  "version": "0.1.0",
-  "description": "ComfyUI assistant for DeepSeek Harness: inspect the local ComfyUI server (status, models, node schemas), author API-format workflows, run them, and collect generated images into the workspace.",
+  "version": "0.2.0",
+  "description": "ComfyUI assistant for DeepSeek Harness (dsh): inspect the server, preflight API-format workflows before spending GPU time, run them, and show generated images inline as attachments while also saving them into the workspace.",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -13,6 +13,48 @@
       "patch": "./cordis.patch.yml"
     }
   },
+  "dshWorkshop": {
+    "schema": "omdsh-workshop-package/v1",
+    "type": "plugin",
+    "integration": {
+      "protocol": "harness-cordis",
+      "artifact": "cordis.patch.yml"
+    },
+    "install": {
+      "mode": "guided",
+      "adapter": "third-party",
+      "failurePolicy": "manual",
+      "touchesCurrentBeforeActivation": false
+    },
+    "lifecycle": {
+      "activation": "hot-reload",
+      "dispose": "supported"
+    },
+    "permissions": [
+      "fs:read",
+      "fs:write",
+      "net:loopback",
+      "net:https"
+    ],
+    "compatibility": {
+      "dshVersions": [
+        "0.2.1-alpha.3",
+        "0.2.1-rc.2"
+      ]
+    },
+    "capability": {
+      "id": "comfyui-toolkit",
+      "kind": "tools",
+      "invocation": "Agent calls comfyui_status / comfyui_validate_workflow / comfyui_run_workflow",
+      "expected": "A preflighted workflow runs, the image is saved into the workspace and rendered inline as an attachment."
+    },
+    "evidence": {
+      "install": null,
+      "failureIsolation": null,
+      "hotReload": null,
+      "remove": null
+    }
+  },
   "engines": {
     "node": "^22.19.0 || >=24.0.0"
   },
@@ -21,6 +63,7 @@
     "deepseek-harness",
     "comfyui",
     "stable-diffusion",
+    "image-to-image",
     "workflow",
     "ai-generated"
   ],
@@ -29,7 +72,8 @@
     "lib",
     "docs",
     "cordis.patch.yml",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "smoke": "node test/smoke.mjs"
