@@ -1,0 +1,44 @@
+{
+  "name": "comfyui-assistant",
+  "version": "0.1.0",
+  "description": "ComfyUI assistant for DeepSeek Harness: inspect the local ComfyUI server (status, models, node schemas), author API-format workflows, run them, and collect generated images into the workspace.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "comfyui",
+    "stable-diffusion",
+    "workflow"
+  ],
+  "license": "MIT",
+  "files": [
+    "lib",
+    "docs",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "smoke": "node test/smoke.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenjiang2025/ComfyUI-comfyui-assistant.git"
+  },
+  "homepage": "https://github.com/chenjiang2025/ComfyUI-comfyui-assistant#readme",
+  "bugs": {
+    "url": "https://github.com/chenjiang2025/ComfyUI-comfyui-assistant/issues"
+  }
+}

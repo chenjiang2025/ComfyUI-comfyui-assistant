@@ -1,0 +1,6 @@
+# comfyui-assistant bundle patch: inserts the plugin row into the profile roster.
+# The row is a bare plugin by package name; its config schema (exported `Config`)
+# becomes the settings card rendered by the Plugins manager.
+- insert:
+    - id: comfyui-assistant
+      name: 'comfyui-assistant'
