@@ -2,12 +2,13 @@
 
 仓库：<https://github.com/chenjiang2025/ComfyUI-comfyui-assistant>
 
+> **AI 生成说明**：本仓库的代码、文档、内置手册与示例图均由 AI（在 DeepSeek Harness 中运行的 coding agent）生成；人工只提供需求、运行环境与验收。使用前请自行审阅代码。
 
 把本地（或远程）**ComfyUI** 接进 DeepSeek Harness 的插件：让 Agent 能看服务器、查模型、查节点、写 API 格式工作流、跑图，并把产物直接存回会话工作区。
 
 对标 ChatGPT 上的 "ComfyUI Assistant"：不是替你点界面，而是把 ComfyUI 的 HTTP API 变成 Agent 手里的工具 + 一本随叫随到的手册。
 
-![示例出图](docs/sample-zimage.png)
+![AI 生成的示例图：雾中山谷里的小木屋（Z-Image Turbo）](docs/sample-zimage.png)
 
 ## 能力
 

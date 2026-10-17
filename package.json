@@ -21,7 +21,8 @@
     "deepseek-harness",
     "comfyui",
     "stable-diffusion",
-    "workflow"
+    "workflow",
+    "ai-generated"
   ],
   "license": "MIT",
   "files": [
