@@ -169,7 +169,7 @@ comfyui-assistant/
 ## 开发 / 测试
 
 ```powershell
-cd "C:\Users\辰\Documents\deepseek-harness\默认工作区\comfyui-assistant"
+cd <comfyui-assistant 目录>
 node test/smoke.mjs            # 全量（含 t2i + img2img 两次真实出图）
 node test/smoke.mjs --no-run   # 跳过 GPU 生成，只跑预检/查询
 ```
